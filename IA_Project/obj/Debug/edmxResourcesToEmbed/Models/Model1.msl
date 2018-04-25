@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectModelStoreContainer" CdmEntityContainer="ProjectContext">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="ProjectModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="idea_Project">
+      <EntityTypeMapping TypeName="ProjectModel.idea_Project">
+        <MappingFragment StoreEntitySet="idea_Project">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Idea_Name" ColumnName="Idea_Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Professors">
+      <EntityTypeMapping TypeName="ProjectModel.Professor">
+        <MappingFragment StoreEntitySet="Professor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamLeaders">
+      <EntityTypeMapping TypeName="ProjectModel.TeamLeader">
+        <MappingFragment StoreEntitySet="TeamLeader">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Professor_id" ColumnName="Professor_id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="idea_project_id" ColumnName="idea_project_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamMembers">
+      <EntityTypeMapping TypeName="ProjectModel.TeamMember">
+        <MappingFragment StoreEntitySet="TeamMember">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="skills" ColumnName="skills" />
+          <ScalarProperty Name="TeamLeader_id" ColumnName="TeamLeader_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

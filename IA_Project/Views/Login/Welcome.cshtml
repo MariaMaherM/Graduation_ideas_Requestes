@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome @Session["User_Name"].ToString()</h2>
+
+<p>
+    @Html.ActionLink("Show All Professors", "ShowProfessors","Admin")
+</p>
+
+<p>
+    @Html.ActionLink("Add New Professor", "Create", "Admin")
+</p>
+<p>
+    @Html.ActionLink("Edite My Profile", "Edit", "Admin")
+</p>

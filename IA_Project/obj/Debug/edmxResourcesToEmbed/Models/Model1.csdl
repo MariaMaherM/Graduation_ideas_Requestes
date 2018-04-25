@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="User_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Phone_Number" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="idea_Project">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Idea_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Professor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="User_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="phone_number" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TeamLeader">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="User_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Professor_id" Type="Int32" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Phone_Number" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="level" Type="Int32" />
+    <Property Name="Skills" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idea_project_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TeamMember">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="User_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="level" Type="Int32" />
+    <Property Name="skills" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TeamLeader_id" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="ProjectContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="idea_Project" EntityType="Self.idea_Project" />
+    <EntitySet Name="Professors" EntityType="Self.Professor" />
+    <EntitySet Name="TeamLeaders" EntityType="Self.TeamLeader" />
+    <EntitySet Name="TeamMembers" EntityType="Self.TeamMember" />
+  </EntityContainer>
+</Schema>

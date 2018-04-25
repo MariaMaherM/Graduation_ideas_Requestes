@@ -1,0 +1,59 @@
+﻿@model IEnumerable<IA_Project.Models.Professor>
+
+@{
+    ViewBag.Title = "ShowProfessors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowProfessors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User_Name)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
