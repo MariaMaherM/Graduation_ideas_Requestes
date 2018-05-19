@@ -6,6 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using IA_Project.Controllers;
 using System.Data.Entity;
+using System.Net.Mail;
+using System.Net;
+using System.Text;
+using IA_Project.ViewModel;
 
 namespace IA_Project.Controllers
 {
@@ -20,9 +24,37 @@ namespace IA_Project.Controllers
         }
 
         // GET: Admin/Details/5
-        public ActionResult Details(int id)
+        public ActionResult showMemberPF(int id)
         {
-            return View();
+
+
+
+            Professor prof = new Professor();
+            var tm = db.TeamLeaders.ToList();
+            ProfessorTeamLeader pt = new ProfessorTeamLeader()
+            {
+                Professors = prof,
+                TeamLeaders = tm
+
+            };
+
+            var details = (from userlist in db.TeamLeaders
+                           where userlist.id_professor == prof.id
+                           select new
+                           {
+                               userlist.member1_Name,
+                               userlist.member2_Name,
+                               userlist.member3_Name,
+                               userlist.member4_Name,
+                               userlist.member5_Name,
+                               userlist.User_Name,
+                               userlist.id
+
+
+                           }).ToList();
+
+            var num = db.TeamLeaders.ToList().Where(c => c.id == id);
+            return View(num.ToList());
         }
 
         public ActionResult ShowProfessors()
@@ -34,7 +66,17 @@ namespace IA_Project.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult Details(int id)
+        {
+
+
+
+            var num = db.Professors.ToList().SingleOrDefault(c => c.id == id);
+
+            return View(num);
+
+        }
 
         // POST: Admin/Create
         [HttpPost]
@@ -100,12 +142,53 @@ namespace IA_Project.Controllers
                pro = db.Professors.Find(pro.id);
                 db.Professors.Remove(pro);
                 db.SaveChanges();
-                return RedirectToAction("ShowProfessors","Admin");
+                return RedirectToAction("ShowProfessors", "Admin");
             }
             catch
             {
-                return View("ShowProfessors", "Admin");
+                return RedirectToAction("ShowProfessors", "Admin");
             }
+        }
+
+
+
+
+
+
+        public JsonResult SendEmailToUser(string y)
+        {
+            bool result = false;
+            //da el mota3'air
+            result = SendEmail(y, "acceptance", "<p>hi<br>thats my acceptance mail for you</p>");
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public bool SendEmail(string ToEmail, string Subject, string EmailBody)
+        {
+            try
+            {
+                string SenderEmail = System.Configuration.ConfigurationManager.AppSettings["SenderEmail"].ToString();
+                string SenderPass = System.Configuration.ConfigurationManager.AppSettings["SenderPass"].ToString();
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.EnableSsl = true;
+                client.Timeout = 100000;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential(SenderEmail, SenderPass);
+                MailMessage msg = new MailMessage(SenderEmail, ToEmail, Subject, EmailBody);
+                msg.IsBodyHtml = true;
+                msg.BodyEncoding = UTF8Encoding.UTF8;
+                client.Send(msg);
+                return true;
+            }
+
+            catch (Exception Ex)
+            {
+                return false;
+            }
+
         }
     }
 }

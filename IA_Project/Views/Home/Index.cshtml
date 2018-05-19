@@ -1,13 +1,75 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@model IEnumerable<IA_Project.Models.Professor>
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<body>
 
+<p style="font-size:20px">Here All Available Professors</p>
+    <ol type="A" style="font-size:18px">
 
-        @if (User.Identity.IsAuthenticated)
+        @foreach (var item in Model)
         {
-            <h1>Welcome @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name :"Guest")</h1>
-            <a href="@Url.Action("Logout","Home")">Logout</a>
+
+      <li style="color:slategray"> @Html.ActionLink(item.User_Name, "Details", new { id = item.id })</li> 
+
         }
+
+
+        
+    </ol>
    
+
+    <script>
+		function myFunction() {
+			var input, filter, ul, li, a, i;
+			filter = input.value.toUpperCase();
+			ul = document.getElementById("myUL");
+			li = ul.getElementsByTagName("li");
+			for (i = 0; i < li.length; i++) {
+				a = li[i].getElementsByTagName("a")[0];
+				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+
+				}
+			}
+		}
+    </script>
+    </body>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myUL1 {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 100px;
+        width: 350px;
+    }
+
+        #myUL1 li a {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+        }
+
+            #myUL1 li a:hover:not(.header) {
+                background-color: #eee;
+            }
+
+    img {
+        width: 400px;
+        height: 60%;
+        margin-top: 80px;
+        margin-left: -120px;
+    }
+</style>

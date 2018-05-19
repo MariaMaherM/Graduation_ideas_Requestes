@@ -3,16 +3,37 @@
     ViewBag.Title = "Welcome";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="test">
+    <h2>Welcome @Session["User_Name"].ToString()</h2>
 
-<h2>Welcome @Session["User_Name"].ToString()</h2>
+    <p>
+        @Html.ActionLink("Show All Professors", "ShowProfessors", "Admin")
+    </p>
 
-<p>
-    @Html.ActionLink("Show All Professors", "ShowProfessors","Admin")
-</p>
+    <p>
+        @Html.ActionLink("Add New Professor", "Create", "Admin")
+    </p>
+    <p>
+        @Html.ActionLink("Edite My Profile", "Edit", "Admin")
+    </p>
+</div>
 
-<p>
-    @Html.ActionLink("Add New Professor", "Create", "Admin")
-</p>
-<p>
-    @Html.ActionLink("Edite My Profile", "Edit", "Admin")
-</p>
+    <style>
+        .test {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        h2 {
+            text-align: center;
+            color: aqua;
+        }
+
+        p {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 20%;
+            text-align: center;
+            font-size: x-large;
+        }
+    </style>

@@ -20,5 +20,8 @@ namespace IA_Project.Models
         public byte[] image { get; set; }
         public string Email { get; set; }
         public Nullable<decimal> Phone_Number { get; set; }
+        public Nullable<int> professorId { get; set; }
+    
+        public virtual Professor Professor { get; set; }
     }
 }

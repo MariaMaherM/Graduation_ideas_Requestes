@@ -1,0 +1,271 @@
+﻿@model IEnumerable<IA_Project.Models.TeamLeader>
+
+@{
+    ViewBag.Title = "ShowAcceptedTM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowAcceptedTM</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member1_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member1_level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member1_GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member1_Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member2_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member2_level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member2_GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member2_Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member3_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member3_level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member3_GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member3_Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member4_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member4_level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member4_GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member4_Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member5_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member5_level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member5_GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member5_Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member1_file)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member2_file)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member3_file)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member4_file)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member5_file)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image_team)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idea_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idea_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idea_tools)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User_Name)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member1_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member1_level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member1_GPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member1_Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member2_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member2_level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member2_GPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member2_Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member3_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member3_level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member3_GPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member3_Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member4_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member4_level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member4_GPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member4_Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member5_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member5_level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member5_GPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member5_Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member1_file)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member2_file)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member3_file)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member4_file)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member5_file)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image_team)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idea_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idea_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idea_tools)
+        </td>
+        
+       
+    </tr>
+}
+
+</table>
+
+<style>
+    table {
+        width: 100%;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table#t01 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    table#t01 th {
+        background-color: black;
+        color: white;
+    }
+</style>

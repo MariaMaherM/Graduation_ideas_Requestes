@@ -26,9 +26,8 @@ namespace IA_Project.Models
         }
     
         public virtual DbSet<Admin> Admins { get; set; }
-        public virtual DbSet<idea_Project> idea_Project { get; set; }
         public virtual DbSet<Professor> Professors { get; set; }
         public virtual DbSet<TeamLeader> TeamLeaders { get; set; }
-        public virtual DbSet<TeamMember> TeamMembers { get; set; }
+        public virtual DbSet<Table_Request> Table_Request { get; set; }
     }
 }

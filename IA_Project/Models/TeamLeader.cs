@@ -14,16 +14,54 @@ namespace IA_Project.Models
     
     public partial class TeamLeader
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TeamLeader()
+        {
+            this.Table_Request = new HashSet<Table_Request>();
+        }
+    
         public int id { get; set; }
         public string User_Name { get; set; }
         public string Password { get; set; }
-        public Nullable<int> Professor_id { get; set; }
         public byte[] Image { get; set; }
         public string Email { get; set; }
         public string Department { get; set; }
         public Nullable<decimal> Phone_Number { get; set; }
         public Nullable<int> level { get; set; }
         public string Skills { get; set; }
-        public Nullable<int> idea_project_id { get; set; }
+        public string member1_Name { get; set; }
+        public Nullable<int> member1_level { get; set; }
+        public Nullable<double> member1_GPA { get; set; }
+        public string member1_Skills { get; set; }
+        public string member2_Name { get; set; }
+        public Nullable<int> member2_level { get; set; }
+        public Nullable<double> member2_GPA { get; set; }
+        public string member2_Skills { get; set; }
+        public string member3_Name { get; set; }
+        public Nullable<int> member3_level { get; set; }
+        public Nullable<double> member3_GPA { get; set; }
+        public string member3_Skills { get; set; }
+        public string member4_Name { get; set; }
+        public Nullable<int> member4_level { get; set; }
+        public Nullable<double> member4_GPA { get; set; }
+        public string member4_Skills { get; set; }
+        public string member5_Name { get; set; }
+        public Nullable<int> member5_level { get; set; }
+        public Nullable<double> member5_GPA { get; set; }
+        public string member5_Skills { get; set; }
+        public string member1_file { get; set; }
+        public string member2_file { get; set; }
+        public string member3_file { get; set; }
+        public string member4_file { get; set; }
+        public string member5_file { get; set; }
+        public string image_team { get; set; }
+        public string idea_name { get; set; }
+        public string idea_description { get; set; }
+        public string idea_tools { get; set; }
+        public Nullable<int> id_professor { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Table_Request> Table_Request { get; set; }
+        public virtual Professor Professor { get; set; }
     }
 }

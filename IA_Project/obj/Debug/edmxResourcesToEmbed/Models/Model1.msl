@@ -4,21 +4,13 @@
     <EntitySetMapping Name="Admins">
       <EntityTypeMapping TypeName="ProjectModel.Admin">
         <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="professorId" ColumnName="professorId" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="User_Name" ColumnName="User_Name" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="idea_Project">
-      <EntityTypeMapping TypeName="ProjectModel.idea_Project">
-        <MappingFragment StoreEntitySet="idea_Project">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Idea_Name" ColumnName="Idea_Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -38,28 +30,55 @@
     <EntitySetMapping Name="TeamLeaders">
       <EntityTypeMapping TypeName="ProjectModel.TeamLeader">
         <MappingFragment StoreEntitySet="TeamLeader">
+          <ScalarProperty Name="id_professor" ColumnName="id_professor" />
+          <ScalarProperty Name="idea_tools" ColumnName="idea_tools" />
+          <ScalarProperty Name="idea_description" ColumnName="idea_description" />
+          <ScalarProperty Name="idea_name" ColumnName="idea_name" />
+          <ScalarProperty Name="image_team" ColumnName="image_team" />
+          <ScalarProperty Name="member5_file" ColumnName="member5_file" />
+          <ScalarProperty Name="member4_file" ColumnName="member4_file" />
+          <ScalarProperty Name="member3_file" ColumnName="member3_file" />
+          <ScalarProperty Name="member2_file" ColumnName="member2_file" />
+          <ScalarProperty Name="member1_file" ColumnName="member1_file" />
+          <ScalarProperty Name="member5_Skills" ColumnName="member5_Skills" />
+          <ScalarProperty Name="member5_GPA" ColumnName="member5_GPA" />
+          <ScalarProperty Name="member5_level" ColumnName="member5_level" />
+          <ScalarProperty Name="member5_Name" ColumnName="member5_Name" />
+          <ScalarProperty Name="member4_Skills" ColumnName="member4_Skills" />
+          <ScalarProperty Name="member4_GPA" ColumnName="member4_GPA" />
+          <ScalarProperty Name="member4_level" ColumnName="member4_level" />
+          <ScalarProperty Name="member4_Name" ColumnName="member4_Name" />
+          <ScalarProperty Name="member3_Skills" ColumnName="member3_Skills" />
+          <ScalarProperty Name="member3_GPA" ColumnName="member3_GPA" />
+          <ScalarProperty Name="member3_level" ColumnName="member3_level" />
+          <ScalarProperty Name="member3_Name" ColumnName="member3_Name" />
+          <ScalarProperty Name="member2_Skills" ColumnName="member2_Skills" />
+          <ScalarProperty Name="member2_GPA" ColumnName="member2_GPA" />
+          <ScalarProperty Name="member2_level" ColumnName="member2_level" />
+          <ScalarProperty Name="member2_Name" ColumnName="member2_Name" />
+          <ScalarProperty Name="member1_Skills" ColumnName="member1_Skills" />
+          <ScalarProperty Name="member1_GPA" ColumnName="member1_GPA" />
+          <ScalarProperty Name="member1_level" ColumnName="member1_level" />
+          <ScalarProperty Name="member1_Name" ColumnName="member1_Name" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="User_Name" ColumnName="User_Name" />
           <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Professor_id" ColumnName="Professor_id" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Department" ColumnName="Department" />
           <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
           <ScalarProperty Name="level" ColumnName="level" />
           <ScalarProperty Name="Skills" ColumnName="Skills" />
-          <ScalarProperty Name="idea_project_id" ColumnName="idea_project_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TeamMembers">
-      <EntityTypeMapping TypeName="ProjectModel.TeamMember">
-        <MappingFragment StoreEntitySet="TeamMember">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
-          <ScalarProperty Name="level" ColumnName="level" />
-          <ScalarProperty Name="skills" ColumnName="skills" />
-          <ScalarProperty Name="TeamLeader_id" ColumnName="TeamLeader_id" />
+    <EntitySetMapping Name="Table_Request">
+      <EntityTypeMapping TypeName="ProjectModel.Table_Request">
+        <MappingFragment StoreEntitySet="Table_Request">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id_TeamLeader" ColumnName="id_TeamLeader" />
+          <ScalarProperty Name="id_professor" ColumnName="id_professor" />
+          <ScalarProperty Name="request_id" ColumnName="request_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

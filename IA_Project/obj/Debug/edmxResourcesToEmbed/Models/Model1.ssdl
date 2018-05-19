@@ -10,14 +10,7 @@
     <Property Name="image" Type="image" />
     <Property Name="Email" Type="nchar" MaxLength="30" />
     <Property Name="Phone_Number" Type="numeric" Precision="18" Scale="0" />
-  </EntityType>
-  <EntityType Name="idea_Project">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="Idea_Name" Type="nchar" MaxLength="30" />
-    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="professorId" Type="int" />
   </EntityType>
   <EntityType Name="Professor">
     <Key>
@@ -31,37 +24,127 @@
     <Property Name="Email" Type="nchar" MaxLength="30" />
     <Property Name="Department" Type="nchar" MaxLength="10" />
   </EntityType>
+  <EntityType Name="Table_Request">
+    <Key>
+      <PropertyRef Name="request_id" />
+    </Key>
+    <Property Name="request_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_professor" Type="int" />
+    <Property Name="id_TeamLeader" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="30" />
+  </EntityType>
   <EntityType Name="TeamLeader">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="User_Name" Type="nchar" MaxLength="30" />
     <Property Name="Password" Type="nchar" MaxLength="30" />
-    <Property Name="Professor_id" Type="int" />
     <Property Name="Image" Type="image" />
     <Property Name="Email" Type="nchar" MaxLength="30" />
     <Property Name="Department" Type="nchar" MaxLength="10" />
     <Property Name="Phone_Number" Type="numeric" Precision="18" Scale="0" />
     <Property Name="level" Type="int" />
     <Property Name="Skills" Type="nvarchar(max)" />
-    <Property Name="idea_project_id" Type="int" />
+    <Property Name="member1_Name" Type="varchar" MaxLength="30" />
+    <Property Name="member1_level" Type="int" />
+    <Property Name="member1_GPA" Type="float" />
+    <Property Name="member1_Skills" Type="varchar" MaxLength="600" />
+    <Property Name="member2_Name" Type="varchar" MaxLength="30" />
+    <Property Name="member2_level" Type="int" />
+    <Property Name="member2_GPA" Type="float" />
+    <Property Name="member2_Skills" Type="varchar" MaxLength="600" />
+    <Property Name="member3_Name" Type="varchar" MaxLength="30" />
+    <Property Name="member3_level" Type="int" />
+    <Property Name="member3_GPA" Type="float" />
+    <Property Name="member3_Skills" Type="varchar" MaxLength="600" />
+    <Property Name="member4_Name" Type="varchar" MaxLength="30" />
+    <Property Name="member4_level" Type="int" />
+    <Property Name="member4_GPA" Type="float" />
+    <Property Name="member4_Skills" Type="varchar" MaxLength="600" />
+    <Property Name="member5_Name" Type="varchar" MaxLength="30" />
+    <Property Name="member5_level" Type="int" />
+    <Property Name="member5_GPA" Type="float" />
+    <Property Name="member5_Skills" Type="varchar" MaxLength="600" />
+    <Property Name="member1_file" Type="varchar" MaxLength="5000" />
+    <Property Name="member2_file" Type="varchar" MaxLength="5000" />
+    <Property Name="member3_file" Type="varchar" MaxLength="5000" />
+    <Property Name="member4_file" Type="varchar" MaxLength="5000" />
+    <Property Name="member5_file" Type="varchar" MaxLength="5000" />
+    <Property Name="image_team" Type="varchar" MaxLength="5000" />
+    <Property Name="idea_name" Type="varchar" MaxLength="50" />
+    <Property Name="idea_description" Type="varchar" MaxLength="1000" />
+    <Property Name="idea_tools" Type="varchar" MaxLength="100" />
+    <Property Name="id_professor" Type="int" />
   </EntityType>
-  <EntityType Name="TeamMember">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="User_Name" Type="nchar" MaxLength="30" />
-    <Property Name="level" Type="int" />
-    <Property Name="skills" Type="nvarchar(max)" />
-    <Property Name="TeamLeader_id" Type="int" />
-  </EntityType>
+  <Association Name="FK__Admin__professor__14270015">
+    <End Role="Professor" Type="Self.Professor" Multiplicity="0..1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="professorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Table_Req__id_pr__634EBE90">
+    <End Role="Professor" Type="Self.Professor" Multiplicity="0..1" />
+    <End Role="Table_Request" Type="Self.Table_Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Table_Request">
+        <PropertyRef Name="id_professor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Table_Req__id_Te__793DFFAF">
+    <End Role="TeamLeader" Type="Self.TeamLeader" Multiplicity="0..1" />
+    <End Role="Table_Request" Type="Self.Table_Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeamLeader">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Table_Request">
+        <PropertyRef Name="id_TeamLeader" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TeamLeade__id_pr__7A3223E8">
+    <End Role="Professor" Type="Self.Professor" Multiplicity="0..1" />
+    <End Role="TeamLeader" Type="Self.TeamLeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TeamLeader">
+        <PropertyRef Name="id_professor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ProjectModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="idea_Project" EntityType="Self.idea_Project" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Professor" EntityType="Self.Professor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Request" EntityType="Self.Table_Request" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TeamLeader" EntityType="Self.TeamLeader" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TeamMember" EntityType="Self.TeamMember" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Admin__professor__14270015" Association="Self.FK__Admin__professor__14270015">
+      <End Role="Professor" EntitySet="Professor" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Table_Req__id_pr__634EBE90" Association="Self.FK__Table_Req__id_pr__634EBE90">
+      <End Role="Professor" EntitySet="Professor" />
+      <End Role="Table_Request" EntitySet="Table_Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Table_Req__id_Te__793DFFAF" Association="Self.FK__Table_Req__id_Te__793DFFAF">
+      <End Role="TeamLeader" EntitySet="TeamLeader" />
+      <End Role="Table_Request" EntitySet="Table_Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TeamLeade__id_pr__7A3223E8" Association="Self.FK__TeamLeade__id_pr__7A3223E8">
+      <End Role="Professor" EntitySet="Professor" />
+      <End Role="TeamLeader" EntitySet="TeamLeader" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

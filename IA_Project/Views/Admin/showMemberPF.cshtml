@@ -1,0 +1,101 @@
+﻿@model IEnumerable<IA_Project.Models.TeamLeader>
+
+@{
+    ViewBag.Title = "showMemberPF";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>showMemberPF</h2>
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.member1_Name)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.member2_Name)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.member3_Name)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.member4_Name)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.member5_Name)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User_Name)
+        </td>
+        
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.member1_Name)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.member2_Name)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.member3_Name)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.member4_Name)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.member5_Name)
+        </td>
+        
+    </tr>
+}
+
+</table>
+<style>
+    table {
+        width: 100%;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table#t01 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    table#t01 th {
+        background-color: black;
+        color: white;
+        font-size: 15px;
+   
+        color: azure;
+        position: center;
+        padding-left: 30px;
+    }
+   
+</style>

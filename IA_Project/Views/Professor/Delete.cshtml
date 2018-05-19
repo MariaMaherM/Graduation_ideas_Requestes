@@ -1,0 +1,329 @@
+﻿@model IA_Project.Models.TeamLeader
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TeamLeader</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Name)
+        </dd>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member1_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member1_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member1_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member1_level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member1_GPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member1_GPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member1_Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member1_Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member2_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member2_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member2_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member2_level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member2_GPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member2_GPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member2_Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member2_Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member3_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member3_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member3_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member3_level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member3_GPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member3_GPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member3_Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member3_Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member4_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member4_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member4_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member4_level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member4_GPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member4_GPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member4_Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member4_Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member5_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member5_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member5_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member5_level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member5_GPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member5_GPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member5_Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member5_Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member1_file)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member1_file)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member2_file)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member2_file)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member3_file)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member3_file)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member4_file)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member4_file)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member5_file)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member5_file)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image_team)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image_team)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idea_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idea_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idea_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idea_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idea_tools)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idea_tools)
+        </dd>
+
+        
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ShowMyTeams")
+        </div>
+    }
+</div>
+ 
+<style>
+p {
+        font-size: 30px;
+    }
+
+    dt, dd {
+        color: azure;
+        position: center;
+        padding-left: 30px;
+    }
+
+    </style>

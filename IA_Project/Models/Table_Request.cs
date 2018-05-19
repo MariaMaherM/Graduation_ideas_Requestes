@@ -12,10 +12,14 @@ namespace IA_Project.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class idea_Project
+    public partial class Table_Request
     {
-        public int id { get; set; }
-        public string Idea_Name { get; set; }
-        public string Description { get; set; }
+        public int request_id { get; set; }
+        public Nullable<int> id_professor { get; set; }
+        public Nullable<int> id_TeamLeader { get; set; }
+        public string status { get; set; }
+    
+        public virtual Professor Professor { get; set; }
+        public virtual TeamLeader TeamLeader { get; set; }
     }
 }

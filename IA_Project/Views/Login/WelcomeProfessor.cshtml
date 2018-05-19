@@ -3,6 +3,46 @@
     ViewBag.Title = "WelcomeProfessor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="all">
+    <h2>WelcomeProfessor @Session["User_Name"].ToString()</h2>
 
-<h2>WelcomeProfessor @Session["User_Name"].ToString()</h2>
+    <!Doctype html>
+    <html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
 
+        <div class="test">
+            <input type="button" class="btn btn-primary" value="Update my Profile" onclick="@("window.location.href=' " + Url.Action("Edit","Professor")+" ' ");" />
+            @Html.ActionLink("Show my team", "ShowMyTeam", "Professor")
+        </div>
+
+
+    </body>
+    </html>
+</div>
+<style>
+    h2 {
+        margin: 20px;
+    }
+
+    .test {
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 13%;
+    }
+
+    .all {
+        text-align: center;
+        background-color: rgba(0,0,0,0.8);
+        border-radius:50px;
+    }
+</style>

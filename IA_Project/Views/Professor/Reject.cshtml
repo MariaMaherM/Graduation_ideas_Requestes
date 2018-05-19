@@ -1,0 +1,34 @@
+﻿@model IA_Project.Models.TeamLeader
+
+@{
+    ViewBag.Title = "Reject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reject</h2>
+
+<h3 style="tab-size:50px ; color:black" >Are you sure you want to Reject the Student?</h3>
+<div>
+  
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Reject" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ShowMyTeam")
+        </div>
+    }
+</div>
+
+
+<style>
+    p {
+        font-size: 30px;
+    }
+
+    dt, dd {
+        color: azure;
+        position: center;
+        padding-left: 30px;
+    }
+</style>

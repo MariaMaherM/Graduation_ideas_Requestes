@@ -1,4 +1,4 @@
-﻿@model IA_Project.Models.TeamMember
+﻿@model IA_Project.Models.TeamLeader
 
 @{
     ViewBag.Title = "WelcomeTeamLeader";
@@ -8,43 +8,17 @@
 <h2>WelcomeTeamLeader @Session["User_Name"].ToString()</h2>
 
 <div>
-    <h4>TeamMember</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.User_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.User_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.level)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.level)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.skills)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.skills)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TeamLeader_id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TeamLeader_id)
-        </dd>
-
-    </dl>
+   
+    
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+<style>
+    p {
+        position: center;
+        font-size: 40px;
+    }
+</style>

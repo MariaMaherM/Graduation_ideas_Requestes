@@ -5,12 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="22421d9c5c4048839345400eb6056f14" Name="Diagram1">
-        <EntityTypeShape EntityType="ProjectModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.idea_Project" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.Professor" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.TeamLeader" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.TeamMember" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-      </Diagram>
+        <EntityTypeShape EntityType="ProjectModel.Admin" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Professor" Width="1.5" PointX="3.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.TeamLeader" Width="1.5" PointX="5.625" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="ProjectModel.FK__Admin__professor__14270015" />
+        <EntityTypeShape EntityType="ProjectModel.Table_Request" Width="1.5" PointX="2.625" PointY="5" />
+        <AssociationConnector Association="ProjectModel.FK__Table_Req__id_pr__634EBE90" />
+        <AssociationConnector Association="ProjectModel.FK__Table_Req__id_Te__6442E2C9" />
+        <AssociationConnector Association="ProjectModel.FK__TeamLeade__id_pr__662B2B3B" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -1,0 +1,495 @@
+﻿@model IA_Project.ViewModel.TeamLeaderViewModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+</head>
+<h2>Register</h2>
+<div class="block">
+    <div class="tab">
+        <button class="tabbutton" onclick="openForm('RData')">Fill Your Data</button>
+        <button class="tabbutton" onclick="openForm('RIdea')">Register your Idea</button>
+        <button class="tabbutton" onclick="openForm('RProf')">Select your professor</button>
+    </div>
+
+    <div id="RData" class="tabcontent">
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>TeamLeader</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="data1">
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.TeamLeaders.User_Name)
+                        @Html.TextBoxFor(m => m.TeamLeaders.User_Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.User_Name, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.TeamLeaders.Password)
+
+                        @Html.PasswordFor(m => m.TeamLeaders.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.Password, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="data1">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TeamLeaders.Department)
+
+                        @Html.EditorFor(model => model.TeamLeaders.Department, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TeamLeaders.Department, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+
+                        @Html.LabelFor(x => x.TeamLeaders.Email)
+                        @Html.TextBoxFor(m => m.TeamLeaders.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.Email, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+
+                        @Html.LabelFor(x => x.TeamLeaders.Phone_Number)
+                        @Html.TextBoxFor(m => m.TeamLeaders.Phone_Number, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.Phone_Number, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+
+                        @Html.LabelFor(x => x.TeamLeaders.Image)
+                        @Html.TextBoxFor(m => m.TeamLeaders.Image, new { type = "File" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.Image, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.level)
+                        @Html.TextBoxFor(m => m.TeamLeaders.level, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.level, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.Skills)
+                        @Html.TextBoxFor(m => m.TeamLeaders.Skills, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.Skills, "", new { @class = "text-danger" })
+
+                    </div>
+
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member1_Name)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member1_Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member1_Name, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member1_level)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member1_level, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member1_level, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member1_GPA)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member1_GPA, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member1_GPA, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member1_Skills)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member1_Skills, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member1_Skills, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member1_file)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member1_file, new { type = "File" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member1_file, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member2_Name)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member2_Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member2_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member2_level)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member2_level, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member2_level, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member2_GPA)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member2_GPA, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member2_GPA, "", new { @class = "text-danger" })
+
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member2_Skills)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member2_Skills, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member2_Skills, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member2_file)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member2_file, new { type = "File" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member2_file, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member3_Name)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member3_Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member3_Name, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member3_level)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member3_level, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member3_level, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member3_GPA)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member3_GPA, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member3_GPA, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member3_Skills)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member3_Skills, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member3_Skills, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member3_file)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member3_file, new { type = "File" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member3_file, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member4_Name)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member4_Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member4_Name, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member4_level)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member4_level, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member4_level, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member4_GPA)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member4_GPA, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member4_GPA, "", new { @class = "text-danger" })
+
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member4_Skills)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member4_Skills, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member4_Skills, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member4_file)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member4_file, new { type = "File" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member4_file, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member5_Name)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member5_Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member5_Name, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member5_level)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member5_level, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member5_level, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member5_GPA)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member5_GPA, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member5_GPA, "", new { @class = "text-danger" })
+
+
+
+                    </div>
+                </div>
+                <div class="data1">
+
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member5_Skills)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member5_Skills, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member5_Skills, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="data1">
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.TeamLeaders.member5_file)
+                        @Html.TextBoxFor(m => m.TeamLeaders.member5_file, new { type = "File" })
+                        @Html.ValidationMessageFor(n => n.TeamLeaders.member5_file, "", new { @class = "text-danger" })
+
+
+                    </div>
+                </div>
+
+                <div class="data2" style="float:left">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TeamLeaders.idea_name, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        @Html.EditorFor(model => model.TeamLeaders.idea_name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TeamLeaders.idea_name, "", new { @class = "text-danger" })
+
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TeamLeaders.idea_description, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        @Html.EditorFor(model => model.TeamLeaders.idea_description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TeamLeaders.idea_description, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TeamLeaders.idea_tools, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        @Html.EditorFor(model => model.TeamLeaders.idea_tools, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TeamLeaders.idea_tools, "", new { @class = "text-danger" })
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        }
+    </div>
+
+    <div id="RIdea" class="tabcontent">
+        IdeaName <input type="text" name="fname"><br>
+        IdeaTools: <input type="text" name="fname"><br>
+        IdeaDescription: <input type="text" name="fname"><br>
+
+
+    </div>
+</div>
+<div id="RProf" class="tabcontent">
+
+    <p>Professors</p>
+    @*
+    <dt>
+        @Html.DisplayNameFor(model => model.pf.User_Name)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.pf.User_Name)
+    </dd>
+
+
+    <dt>
+        @Html.DisplayNameFor(model => model.pf.Email)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.pf.Email)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.pf.Department)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.pf.Department)
+    </dd>*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.pf.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.pf.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.pf.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <a class="btn btn-danger" onclick="SendEmailToUser"("yostinaateff@gmail.com")>Click To Send Email</a>
+</div>
+<script>
+        function openForm(formName) {
+            var i;
+            var x = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(formName).style.display = "block";
+        }
+    var x= "yostinaateff@gmail.com"
+</script>
+
+<script>
+
+    $variable = model.TeamLeader_Department.value
+
+</script>
+
+
+
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial;
+        background: rgba(0,0,0,0.2);
+        border-radius: 30px;
+        margin-top: 50px;
+        margin-left:10px;
+        font-family: Raleway;
+        padding: 0px;
+        width: 50%;
+        min-width: 300px;
+    }
+
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .data1{
+            margin-left:500px;
+        }
+        .data2{
+            margin-left:500px;
+        }
+
+        .block{
+                    background: rgba(0,0,0,0.2);
+        border-radius: 30px;
+        width:auto;
+
+        }
+     
+        
+</style>
+
